@@ -4,12 +4,16 @@ import './index.css';
 import {HashRouter as Router} from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
 import {Routes} from "./routes/Routes";
+import {Provider} from "react-redux";
+import store from "./redux/redux";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Routes />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Routes/>
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
